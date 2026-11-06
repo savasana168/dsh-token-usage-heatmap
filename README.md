@@ -92,6 +92,10 @@ bundle and its row can be switched on and off like any other plugin.
 ## Requirements
 
 - A DSH host that serves the Web GUI and exposes `webServer` to plugins.
+- Node 22.15 or newer, or any runtime whose `node:zlib` exports
+  `zstdDecompressSync`. On an older runtime the plugin still loads and serves
+  the route; only compressed session logs (`.jsonl.zstd`) are skipped, so plain
+  `.jsonl` logs still count.
 - No build step and no dependencies: the published package is plain JavaScript.
 
 ## Licence
