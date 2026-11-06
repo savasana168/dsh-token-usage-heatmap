@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Token usage heatmap">
+  <title>Token usage heatmap</title>
+  <rect width="64" height="64" rx="14" fill="#0f172a"/>
+  <!-- The four steps are the plugin's real dark-theme levels, not one colour at
+       four opacities, so the icon matches what the panel actually draws. -->
+  <g>
+    <rect x="12" y="18" width="7" height="7" rx="2" fill="#243a63"/>
+    <rect x="22" y="18" width="7" height="7" rx="2" fill="#2f5a9c"/>
+    <rect x="32" y="18" width="7" height="7" rx="2" fill="#4f8ade"/>
+    <rect x="42" y="18" width="7" height="7" rx="2" fill="#86b4f8"/>
+    <rect x="12" y="28" width="7" height="7" rx="2" fill="#2f5a9c"/>
+    <rect x="22" y="28" width="7" height="7" rx="2" fill="#4f8ade"/>
+    <rect x="32" y="28" width="7" height="7" rx="2" fill="#86b4f8"/>
+    <rect x="42" y="28" width="7" height="7" rx="2" fill="#86b4f8"/>
+    <rect x="12" y="38" width="7" height="7" rx="2" fill="#2f5a9c"/>
+    <rect x="22" y="38" width="7" height="7" rx="2" fill="#3a6cb8"/>
+    <rect x="32" y="38" width="7" height="7" rx="2" fill="#4f8ade"/>
+    <rect x="42" y="38" width="7" height="7" rx="2" fill="#243a63"/>
+  </g>
+</svg>
