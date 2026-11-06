@@ -60,15 +60,15 @@ window of this profile.
 
 Through the app: **Settings → Plugins**, then install `dsh-token-usage-heatmap`.
 
-From a terminal:
+From a terminal, against a named profile:
 
 ```sh
-dsh plugin --profile <profile> add dsh-token-usage-heatmap
+dsh plugin --profile <name> add dsh-token-usage-heatmap
 ```
 
-Replace `<profile>` with the profile that runs your host (for DSH Desktop it is
-managed by the app — install through **Settings → Plugins** there). Restart the
-host after installing; a newly loaded JavaScript bundle needs it.
+Restart the host after installing; a newly loaded JavaScript bundle needs it.
+For DSH Desktop the profile is managed by the app, so use **Settings → Plugins**
+there rather than the command line.
 
 ## How it works
 
