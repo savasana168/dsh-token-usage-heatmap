@@ -1,6 +1,6 @@
 {
   "name": "dsh-token-usage-heatmap",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "description": "Token usage panel for the DSH Web GUI: a 26-week daily heatmap, a per-model bar chart and a header chip, all read from local session logs.",
   "keywords": [

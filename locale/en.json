@@ -1,6 +1,6 @@
 {
   "meta": {
     "title": "Token usage heatmap",
-    "description": "A collapsible panel above the composer with a 26-week daily usage heatmap, a per-model bar chart, and a token total chip in the header."
+    "description": "Click the token chip in the header to open a usage panel: a 26-week daily heatmap, a per-model bar chart, and totals split by range."
   }
 }

@@ -1,6 +1,7 @@
 url: https://github.com/savasana168/dsh-token-usage-heatmap
 name: savasana168/dsh-token-usage-heatmap
 category: usage
+tarball: https://github.com/savasana168/dsh-token-usage-heatmap/releases/download/v0.2.1/dsh-token-usage-heatmap-0.2.1.tgz
 description:
   en: "Token usage panel for the DSH Web GUI: a 26-week daily heatmap, a per-model bar chart and a header chip, all read from local session logs."
   zh: "DSH 网页界面里的 Token 用量面板：26 周每日热力图、逐模型柱状图，以及对话标题栏的小徽章，全部读本地会话日志。"
