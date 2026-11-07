@@ -34,8 +34,12 @@ weeks the grid happens to draw. The bar chart uses a 30-day window for 全部 an
 polls once a minute, refreshes on window focus, and retries briefly on a cold
 start, so it does not stay frozen on the value it saw when the page loaded.
 
-**Collapsible panel** — the full-width strip at the top of the panel collapses
-it to a single bar that still shows the current total; the state is remembered.
+**Click-to-open panel** — the chip is the button. Clicking it drops the full
+panel below it as a floating card; the same click, the panel's × button, a
+click outside, or Escape closes it again. The card is rendered through a React
+portal on `document.body`, so it is never squeezed by the composer's flex
+layout, and on a short window only the card's own body scrolls. Its open state
+is remembered between sessions.
 
 ## Theme support
 
@@ -49,9 +53,9 @@ The plugin adds three switches under **Settings → General**:
 
 | Switch | Effect |
 | --- | --- |
-| Show the usage chip in the header | Hides the header chip |
-| Show the statistics panel on a new session | Hides the panel on the blank new-session screen |
-| Also show the statistics panel inside a conversation | When off, the panel appears only on the blank new-session screen |
+| Show the usage chip in the header | Hides the header chip, and with it the panel's only entry point |
+| Open the panel from the chip on a new session | When off, the new-session chip shows the total but opens nothing |
+| Open the panel from the chip inside a conversation | When off, the in-conversation chip shows the total but opens nothing |
 
 The switches are stored in the Host configuration, so they apply to every
 window of this profile.
@@ -60,10 +64,16 @@ window of this profile.
 
 Through the app: **Settings → Plugins**, then install `dsh-token-usage-heatmap`.
 
-From a terminal, against a named profile:
+From GitHub, against a named profile:
 
 ```sh
-dsh plugin --profile <name> add dsh-token-usage-heatmap
+dsh plugin --profile <name> add github:savasana168/dsh-token-usage-heatmap
+```
+
+From this folder before it is published:
+
+```sh
+dsh plugin --profile <name> add "file:$PWD"
 ```
 
 Restart the host after installing; a newly loaded JavaScript bundle needs it.
@@ -82,9 +92,12 @@ there rather than the command line.
   answers JSON. It requires a loopback `Host` header, refuses
   `sec-fetch-site: cross-site`, and requires any `Origin` to match the host — a
   web page elsewhere must not be able to read your whole token history.
-- `lib/client.js` is the browser half: the panel in `conversation.input.dock`,
-  the chip in `conversation.header.leading`, and the switches in
-  `settings.general.item`.
+- `lib/client.js` is the browser half: one entry in
+  `conversation.header.leading` that renders both the chip and the panel, plus
+  the switches in `settings.general.item`. The panel is a popper portalled to
+  `document.body`, so it is positioned under the chip and never squeezed by the
+  composer's flex layout; click the chip, its × button, or press Escape to
+  close it. The `conversation.input.dock` slot is intentionally unused.
 
 The plugin declares `dsh.bundle` with `cordis.patch.yml`, so it installs as a
 bundle and its row can be switched on and off like any other plugin.
